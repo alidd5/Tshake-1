@@ -963,17 +963,6 @@ database:srem(hash, apbll[2])
 tsX000(apbll[2],msg,"🚫┇تم الغاء حظره من مجموعات البوت")
 return false
 end
-
-if text:match("^تحديث السورس$")  then
-send(msg.chat_id_, msg.id_, 1, '☑┇تم التحديث', 1, 'md')
-os.execute('rm -rf ./libs/utils.lua')
-os.execute('cd libs && wget https://raw.githubusercontent.com/tshakeabas/Tshake/master/libs/utils.lua')
-os.execute('rm -rf Tshake.lua')
-os.execute('wget https://raw.githubusercontent.com/tshakeabas/Tshake/master/Tshake.lua')
-dofile('Tshake.lua')  
-os.exit()
-return false
-end
 if text == "تفعيل"  then
 function TSby(extra,result,success)
 info = '💬┇بواسطه ~⪼ ['..result.first_name_..'](t.me/'..(result.username_ or 'TSHAKETEAM')..')\n'
@@ -2257,9 +2246,9 @@ end
 if text:match("^تحديث السورس$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 send(msg.chat_id_, msg.id_, 1, '☑┇تم التحديث', 1, 'md')
 os.execute('rm -rf ./libs/utils.lua')
-os.execute('cd libs && wget https://raw.githubusercontent.com/tshakeabas/Tshake/master/libs/utils.lua')
+os.execute('.')
 os.execute('rm -rf Tshake.lua')
-os.execute('wget https://raw.githubusercontent.com/tshakeabas/Tshake/master/Tshake.lua')
+os.execute('.')
 dofile('Tshake.lua')  
 os.exit()
 return false
